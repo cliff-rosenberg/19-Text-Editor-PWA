@@ -11,7 +11,9 @@ const { offlineFallback, warmStrategyCache } = require('workbox-recipes');
 // "CacheFirst is the best option for offline web apps using non-critical assetsthat can be gradually cached."
 // "If there is a Response in the cache, the Request will be fulfilled using the cached response and the network will not be used at all."
 // "If there isn't a cached response, the Request will be fulfilled by a network request and the response will be cached so that the next request is served directly from the cache."
-const { CacheFirst } = require('workbox-strategies');
+// "The 'StaleWhileRevalidate' pattern allows you to respond to the request as quickly as possible with a cached response if available, falling back to the network request if it's not cached."
+// "The network request is then used to update the cache."
+const { CacheFirst, StaleWhileRevalidate } = require('workbox-strategies');
 
 // "workbox-routing is a module which makes it easy to "route" these requests to different functions that provide responses."
 // "registerRoute method: Easily register a RegExp, string, or function with a caching strategy to a singleton Router instance."
@@ -58,7 +60,7 @@ registerRoute(
   // this defines the callback function which filters the requests for JS and CSS files to be cached
   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
   new StaleWhileRevalidate({
-    // Name of the cache storage.
+    // name of the cache storage
     cacheName: 'asset-cache',
     plugins: [
       // a plugin that will cache responses with these headers 
