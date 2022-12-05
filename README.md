@@ -25,7 +25,7 @@ This project demonstrates a 'Progressive Web Application' that is realized as a 
 
 ## Installation
 
-No installation is needed, the application is hosted on Heroku at [https://jate-app-v1.herokuapp.com/](https://jate-app-v1.herokuapp.com/)
+NOTE: As of November 2022, Heroku has no "free" accounts, so the demo application has been taken offline until another suitable host can be found.
 
 Note: *Local installation and execution can be done if desired using the scripts setup in the* `package.json` *file in the root directory of the project folder.*
 
@@ -45,7 +45,7 @@ Workbox cache expiration control:
 
 ## Usage
 
-The application is hosted live on the Heroku platform at [https://jate-app-v1.herokuapp.com/](https://jate-app-v1.herokuapp.com/)
+Heroku does not offer "free" accounts as of November 2022, so the demo application has been taken down until further notice.
 
 ## Credits
 
